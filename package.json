@@ -1,6 +1,6 @@
 {
   "name": "@nodestrap/nav",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "A navigation component to navigate between pages.",
   "type": "module",
   "main": "dist/Nav.jsx",
