@@ -1,0 +1,37 @@
+{
+  "name": "@nodestrap/nav",
+  "version": "4.0.0",
+  "description": "A navigation component to navigate between pages.",
+  "type": "module",
+  "main": "dist/Nav.jsx",
+  "types": "dist/Nav.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodestrap/nav.git"
+  },
+  "keywords": [
+    "navigation",
+    "menu",
+    "links",
+    "component",
+    "element",
+    "react",
+    "nodestrap",
+    "styled"
+  ],
+  "author": "heymarco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nodestrap/nav/issues"
+  },
+  "homepage": "https://github.com/nodestrap/nav#readme",
+  "dependencies": {
+    "@nodestrap/icon": "^4.0.3",
+    "@nodestrap/list": "^4.0.1",
+    "@types/react": "^17.0.36",
+    "react": "^17.0.2"
+  }
+}
