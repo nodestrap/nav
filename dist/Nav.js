@@ -5,45 +5,33 @@ import Icon from '@nodestrap/icon';
 import { ListItem, ListSeparatorItem, List, } from '@nodestrap/list';
 export function NavItem(props) {
     // jsx:
-    return (<ListItem 
-    // other props:
-    {...props} 
-    // semantics:
-    aria-current={props['aria-current'] ?? (props.active ? 'page' : undefined)}/>);
+    return (React.createElement(ListItem, { ...props, "aria-current": props['aria-current'] ?? (props.active ? 'page' : undefined) }));
 }
 NavItem.prototype = ListItem.prototype; // mark as ListItem compatible
 export { NavItem as Item };
 export function NavPrevItem(props) {
     // jsx:
-    return (<NavItem 
-    // other props:
-    {...props} 
-    // semantics:
-    aria-label={props['aria-label'] ?? 'Previous'}>
-            {props.children
-            ??
-                <Icon 
+    return (React.createElement(NavItem, { ...props, "aria-label": props['aria-label'] ?? 'Previous' }, props.children
+        ??
+            React.createElement(Icon
+            // appearances:
+            , { 
                 // appearances:
-                icon='prev' 
+                icon: 'prev', 
                 // variants:
-                size='1em'/>}
-        </NavItem>);
+                size: '1em' })));
 }
 export function NavNextItem(props) {
     // jsx:
-    return (<NavItem 
-    // other props:
-    {...props} 
-    // semantics:
-    aria-label={props['aria-label'] ?? 'Next'}>
-            {props.children
-            ??
-                <Icon 
+    return (React.createElement(NavItem, { ...props, "aria-label": props['aria-label'] ?? 'Next' }, props.children
+        ??
+            React.createElement(Icon
+            // appearances:
+            , { 
                 // appearances:
-                icon='next' 
+                icon: 'next', 
                 // variants:
-                size='1em'/>}
-        </NavItem>);
+                size: '1em' })));
 }
 NavPrevItem.prototype = NavItem.prototype; // mark as NavItem compatible
 NavNextItem.prototype = NavItem.prototype; // mark as NavItem compatible
@@ -56,17 +44,13 @@ export function Nav(props) {
     // accessibilities:
     label, ...restProps } = props;
     // jsx:
-    return (<List 
-    // other props:
-    {...restProps} 
-    // semantics:
-    semanticTag={props.semanticTag ?? 'nav'} semanticRole={props.semanticRole ?? 'navigation'} 
-    // layouts:
-    orientation={props.orientation ?? 'inline'} 
-    // behaviors:
-    actionCtrl={props.actionCtrl ?? true}>
-            {props.children}
-        </List>);
+    return (React.createElement(List, { ...restProps, 
+        // semantics:
+        semanticTag: props.semanticTag ?? 'nav', semanticRole: props.semanticRole ?? 'navigation', 
+        // layouts:
+        orientation: props.orientation ?? 'inline', 
+        // behaviors:
+        actionCtrl: props.actionCtrl ?? true }, props.children));
 }
 Nav.prototype = List.prototype; // mark as List compatible
 export { Nav as default };
