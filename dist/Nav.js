@@ -3,9 +3,20 @@ import { default as React, } from 'react'; // base technology of our nodestrap c
 // nodestrap components:
 import Icon from '@nodestrap/icon';
 import { ListItem, ListSeparatorItem, List, } from '@nodestrap/list';
+import { useCurrentActive, } from '@nodestrap/nav-button';
+export { useCurrentActive };
 export function NavItem(props) {
+    // rest props:
+    const { 
+    // accessibilities:
+    active, ...restProps } = props;
+    // fn props:
+    const activeDn = useCurrentActive(props);
+    const activeFn = active ?? activeDn;
     // jsx:
-    return (React.createElement(ListItem, { ...props, "aria-current": props['aria-current'] ?? (props.active ? 'page' : undefined) }));
+    return (React.createElement(ListItem, { ...restProps, "aria-current": props['aria-current'] ?? (activeFn ? 'page' : undefined), 
+        // accessibilities:
+        active: activeFn }));
 }
 NavItem.prototype = ListItem.prototype; // mark as ListItem compatible
 export { NavItem as Item };

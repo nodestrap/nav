@@ -1,5 +1,8 @@
 /// <reference types="react" />
 import { OrientationName, OrientationVariant, ListStyle, ListVariant, ListItemProps, ListSeparatorItem, ListProps } from '@nodestrap/list';
+import { CurrentActiveProps, useCurrentActive } from '@nodestrap/nav-button';
+export type { CurrentActiveProps };
+export { useCurrentActive };
 export interface NavItemProps<TElement extends HTMLElement = HTMLElement> extends ListItemProps<TElement> {
 }
 export declare function NavItem<TElement extends HTMLElement = HTMLElement>(props: NavItemProps<TElement>): JSX.Element;
