@@ -2,8 +2,8 @@
 import { default as React, } from 'react'; // base technology of our nodestrap components
 // nodestrap components:
 import Icon from '@nodestrap/icon';
-import { ListItem, ListSeparatorItem, List, } from '@nodestrap/list';
 import { useCurrentActive, } from '@nodestrap/nav-button';
+import { ListItem, ListSeparatorItem, List, } from '@nodestrap/list';
 export { useCurrentActive };
 export function NavItem(props) {
     // rest props:

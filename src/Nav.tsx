@@ -7,6 +7,11 @@ import {
 import Icon                 from '@nodestrap/icon'
 import {
     // hooks:
+    CurrentActiveProps,
+    useCurrentActive,
+}                           from '@nodestrap/nav-button'
+import {
+    // hooks:
     OrientationName,
     OrientationVariant,
     
@@ -24,11 +29,6 @@ import {
     ListProps,
     List,
 }                           from '@nodestrap/list'
-import {
-    // hooks:
-    CurrentActiveProps,
-    useCurrentActive,
-}                           from '@nodestrap/nav-button'
 
 
 
@@ -42,7 +42,8 @@ export { useCurrentActive }
 
 export interface NavItemProps<TElement extends HTMLElement = HTMLElement>
     extends
-        ListItemProps<TElement>
+        ListItemProps<TElement>,
+        CurrentActiveProps
 {
 }
 export function NavItem<TElement extends HTMLElement = HTMLElement>(props: NavItemProps<TElement>) {
