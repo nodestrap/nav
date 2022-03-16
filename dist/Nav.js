@@ -58,8 +58,6 @@ export function Nav(props) {
     return (React.createElement(List, { ...restProps, 
         // semantics:
         semanticTag: props.semanticTag ?? 'nav', semanticRole: props.semanticRole ?? 'navigation', 
-        // layouts:
-        orientation: props.orientation ?? 'inline', 
         // behaviors:
         actionCtrl: props.actionCtrl ?? true }, props.children));
 }
